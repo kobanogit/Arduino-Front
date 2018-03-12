@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Burn !</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+
+<body>
+  <div class="menu">
+    <div class="menuFull">
+      <span class="menuContent">KEMBRO</span>
+      <div class="arduinoName">
+        <div class="arduinoNameTop"></div>
+        <div class="arduinoNameBottom"></div>
+      </div>
+      <a href="graph.html?d=1"><span id="menuDay1" class="menuOpenDay">Lundi</span></a>
+      <a href="graph.html?d=2"><span id="menuDay2" class="menuOpenDay">Mardi</span></a>
+      <a href="graph.html?d=3"><span id="menuDay3" class="menuOpenDay">Mercredi</span></a>
+      <a href="graph.html?d=4"><span id="menuDay4" class="menuOpenDay">Jeudi</span></a>
+      <a href="graph.html?d=5"><span id="menuDay5" class="menuOpenDay">Vendredi</span></a>
+      <a href="graph.html?d=6"><span id="menuDay6" class="weekendDay"> Samedi</span></a>
+      <a href="graph.html?d=0"><span id="menuDay0" class="weekendDay"> Dimanche</span></a>
+      <span><img src="img/conf.png" alt="" class="conf_img" id="conf_popup"></span>
+    </div>
+    <div class="menuMobile">
+      <span class="menuContent">KEMBRO</span>
+      <div class="arduinoName">
+        <div class="arduinoNameTop"></div>
+        <div class="arduinoNameBottom"></div>
+      </div>
+      <div id="menuDays">
+        <a href="graph.html?d=1"><span id="menuDayMini1" class="menuOpenDay">L</span></a>
+        <a href="graph.html?d=2"><span id="menuDayMini2" class="menuOpenDay">M</span></a>
+        <a href="graph.html?d=3"><span id="menuDayMini3" class="menuOpenDay">M</span></a>
+        <a href="graph.html?d=4"><span id="menuDayMini4" class="menuOpenDay">J</span></a>
+        <a href="graph.html?d=5"><span id="menuDayMini5" class="menuOpenDay">V</span></a>
+        <a href="graph.html?d=6"><span id="menuDayMini6" class="weekendDay"> S</span></a>
+        <a href="graph.html?d=0"><span id="menuDayMini0" class="weekendDay"> D</span></a>
+        <img src="img/conf.png" alt="" class="conf_img menuContent" id="conf_popup2">
+      </div>
+    </div>
+  </div>
+
+
+<div class="conf">
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">×</span>
+        <h2>Configuration Arduino</h2>
+      </div>
+      <div class="modal-body">
+        <form id="configForm" method="post" action="submit-result.php" name="form">
+          <div class="popupItem"><div class="popupLeft">temperature mesurée</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <div class="popupItem"><div class="popupLeft">temperature programmée</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <div class="popupItem"><div class="popupLeft">MQTT connexion</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <div class="popupItem"><div class="popupLeft">NTP connexion</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <div class="popupItem"><div class="popupLeft">Wifi connexion</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <div class="popupItem"><div class="popupLeft">Point d'accès online</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <div class="popupItem"><div class="popupLeft">Nom du module</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <div class="popupItem"><div class="popupLeft">Nom du point d'accès wifi</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <div class="popupItem"><div class="popupLeft">Mot de passe point d'accès wifi</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <div class="popupItem"><div class="popupLeft">Adresse serveur MQTT (si utilisé)</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <div class="popupItem"><div class="popupLeft">Adresse serveur NTP (si utilisé)</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <div class="popupItem"><div class="popupLeft">Conf mode point accès (0,1)</div><div class="popupRight"></div><div class="stopFloat"></div></div>
+          <input name="config" value="Enregistrer" type="submit"  class="inputSubmitBlue inputSubmitPopup">
+        </form>
+        <form id="configForm" method="post" action="submit-result.php" name="form" onsubmit="return confirm('Etes-vous sûr de voulir revenir à la confirmation d\'origine ?');">
+          <input name="resetConfig" value="Reset Arduino" type="submit" class="inputSubmitYellow inputSubmitPopup">
+        </form>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+  <div id="indexContainer">
+    <div id="graph">
+    </div>
+
+
+    <form id="progForm" method="post" action="submit-result.php" name="form">
+      <div id="prog">
+        <div class="tempToDay">
+          <!-- <h3>Programmation jours et températures  :</h3> -->
+          <input type="checkbox" name="checkboxDay1" id="checkboxDay1" value="1"><label for="checkboxDay1">Lundi    &nbsp;</label>
+          <input type="checkbox" name="checkboxDay2" id="checkboxDay2" value="1"><label for="checkboxDay2">Mardi    &nbsp;</label>
+          <input type="checkbox" name="checkboxDay3" id="checkboxDay3" value="1"><label for="checkboxDay3">Mercredi &nbsp;</label>
+          <input type="checkbox" name="checkboxDay4" id="checkboxDay4" value="1"><label for="checkboxDay4">Jeudi    &nbsp;</label>
+          <input type="checkbox" name="checkboxDay5" id="checkboxDay5" value="1"><label for="checkboxDay5">Vendredi &nbsp;</label>
+          <input type="checkbox" name="checkboxDay6" id="checkboxDay6" value="1"><label for="checkboxDay6">Samedi   &nbsp;</label>
+          <input type="checkbox" name="checkboxDay0" id="checkboxDay0" value="1"><label for="checkboxDay0">Dimanche &nbsp;</label>
+          <span class="stopFloat"></span>
+        </div>
+
+        <!-- Champs de modification des températures -->
+        <div id="modifTemp"></div>
+
+        <input name="temp" value="Enregistrer" type="submit" class="inputSubmitBlue inputSubmitTemp">
+
+      </div><!-- ! #prog -->
+    </form>
+  </div>
+  <!-- lib graph.js -->
+  <script type="text/javascript" src="Chart.min.js"></script>
+  <!-- Fonctions -->
+  <script type="text/javascript" src="functions.js"></script>
+  <!-- Valeurs -->
+  <script type="text/javascript" src="values.js"></script>
+  <!-- DOM Update -->
+  <script type="text/javascript" src="dom-update.js"></script>
+</body>
+</html>

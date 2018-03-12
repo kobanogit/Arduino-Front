@@ -1,0 +1,397 @@
+/* CSS Reset -----------------------------------------------------------*/
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,
+pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,
+small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,
+form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,
+canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,
+ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;
+font:inherit;vertical-align:baseline;margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,
+section{display:block}body{line-height:1}ol,ul{list-style:none}
+blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,
+q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+/* ! CSS Reset ---------------------------------------------------*/
+
+
+/* Généralités -------------------------------------------------- */
+.stopFloat{
+  clear: both;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #555;
+  color:#EEE;
+}
+h1{font-size: 1.7em;margin: 5px 5px 13px 0;}
+h2{font-size: 1.5em;margin: 5px 5px 10px 0;}
+h3{font-size: 1.3em;margin: 5px 5px 10px 0;}
+p, span{
+  font-size: 1.1em;
+  margin:3px 0;
+  line-height: 20px;
+}
+input[type="submit"]{
+  cursor:pointer;
+  border-radius: 6px;
+  border:none;
+  /*max-width: 350px;*/
+  height: 30px;
+  font-size: 20px;
+  color: #fff;
+}
+input.inputSubmitBlue{
+  background-color: #3cb0fd;
+}
+input.inputSubmitYellow{
+  background-color: #ffff80;
+  color:#333;
+}
+input.inputSubmitPopup{
+  margin: 10px 20% 5px;
+  width: 60%;
+}
+input.inputSubmitTemp{
+  margin: 10px 10% 5px;
+  width: 80%;
+  /*max-width: 500px*/
+  /*margin: 0 auto;*/
+}
+/* ! Généralités -------------------------------------------------- */
+
+
+
+/* Menu header -------------------------------------------------- */
+.menuFull{ display: block; }
+.menuMobile{ display:none; }
+/* Menu full */
+.menuFull, .menuMobile{
+  width: 100%;
+  background-color: #444;
+}
+.menu{
+  text-align: center;
+  color: #EEE;
+  margin: 0;
+}
+.menu a{
+  text-decoration:none;
+}
+.menuFull span, .menuFull .arduinoName, .menuMobile .arduinoName, #menuDays{
+  margin : 0 5px;
+  display: inline-block;
+  line-height: 18px;
+  vertical-align: middle;
+}
+div.arduinoName{color:#3cb0fd;}
+div.arduinoName .arduinoNameTop,
+div.arduinoName .arduinoNameBottom{
+  display: block;
+}
+div.arduinoName .arduinoNameTop{
+  font-size: .95em;
+  margin-bottom: -5px;
+}
+div.arduinoName .arduinoNameBottom{
+  font-size: .75em;
+}
+.conf_img{
+  width: 20px;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.menuOpenDay,
+.weekendDay{
+  border: 1px solid #DDD;
+  padding: 2px;
+  opacity: 0.5;
+  background-color:
+}
+.menuOpenDay{
+  background-color: #a3cc56;
+  color: #555;
+}
+.weekendDay{
+  background-color: #d9886c;
+  color: #555;
+}
+.menuMobile #menuDays a span{
+  padding: 0 5px;
+}
+/* ! Menu header */
+
+
+
+/* DIV Configuration  class="conf" -----------------------------------*/
+.modal {
+    display: none;   /*Hidden by default*/
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(85,85,85); /* Fallback color */
+    background-color: rgba(85,85,85,0.8); /* Black w/ opacity */
+    border-radius: 7px;
+}
+.modal-content {
+    position: relative;
+    background-color: #555;
+    margin: 10% auto 0;
+    padding: 0;
+    border: 1px solid #333;
+    border-radius: 7px;
+    width: 70%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+  -webkit-border-top-left-radius: 7px;
+  -webkit-border-top-right-radius: 7px;
+  -moz-border-radius-topleft: 7px;
+  -moz-border-radius-topright: 7px;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.modal-body {padding: 15px 16px;}
+@-webkit-keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+#myModal {
+  -webkit-animation: animatetop 0.5s; /* Safari 4+ */
+  -moz-animation:    animatetop 0.5s; /* Fx 5+ */
+  -o-animation:      animatetop 0.5s; /* Opera 12+ */
+  animation:         animatetop 0.5s; /* IE 10+, Fx 29+ */
+}
+.close {
+  color: #DDD;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #FFF;
+  text-decoration: none;
+  cursor: pointer;
+}
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+  -webkit-border-bottom-right-radius: 7px;
+  -webkit-border-bottom-left-radius: 7px;
+  -moz-border-radius-bottomright: 7px;
+  -moz-border-radius-bottomleft: 7px;
+  border-bottom-right-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+#confPopup{
+}
+.popupItem{
+  border-bottom: 1px solid #CCC;
+  padding: 3px 0;
+}
+.popupItem:nth-child(12){
+  border:none;
+}
+.popupLeft{
+  float: left;
+  padding: 3px;
+}
+.popupRight{
+  float: right;
+  padding: 3px;
+  width: 30%;
+  color: #3cb0fd;
+}
+.popupItem input{
+  border: none;
+  background-color: #333;
+  color:#EEE;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+.popupItem input[type="radio"]{
+  border: none;
+  background-color: red;
+}
+/* ! DIV Configuration  class="conf" */
+
+
+
+
+/* Graph ----------------------------------------------*/
+#graph{
+  max-width: 800px;
+  margin: 10px auto 0;
+  padding: 0 10px;
+}
+
+
+
+/* Choix des jours appliqués aux températures ----------*/
+#progForm{
+  margin: 0 auto;
+  max-width: 800px;
+}
+.tempToDay *, .tempToDay *::before, .tempToDay *::after {
+  box-sizing: border-box;
+}
+.tempToDay {
+  position: relative;
+  /*top: 50%;*/
+  /*left: 50%;*/
+  /*transform: translate(-50%, -50%);*/
+  width: auto;
+  text-align: center;
+}
+.tempToDay input{
+  position: absolute;
+  left: -9999px;
+}
+.tempToDay label {
+  display: block;
+  position: relative;
+  margin: 5px;
+  padding: 3px 0px 3px 25px;
+  border: 2px solid #fff;
+  border-radius: 100px;
+  color: #DDD;
+  /*background-color: #6a8494;*/
+  background-color: #444;
+  box-shadow: 0 0 20px rgba(0, 0, 0, .2);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color .2s, box-shadow .2s;
+  /*width: 110px;*/
+  display: inline-block;
+  text-align: left;
+}
+.tempToDay label#checkboxDay1{
+  /*width: 50px;*/
+}
+.tempToDay label::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 3px;
+  bottom: 3px;
+  left: 5px;
+  width: 15px;
+  border: 3px solid #fff;
+  border-radius: 100px;
+  transition: background-color .2s;
+}
+.tempToDay label:hover, .tempToDay input:focus + label {
+  box-shadow: 0 0 20px rgba(0, 0, 0, .6);
+}
+.tempToDay input:checked + label {
+  background-color: #3cb0fd;
+  color: #444;
+}
+.tempToDay input:checked + label::before {
+  background-color: #3cb0fd;
+  /*border: 3px solid #444;*/
+}
+
+
+
+/* sliders températures : -----------------------------*/
+.timeBloc{
+  text-align: center;
+  margin-top: 10px;
+}
+.timePrint, .tmp, .moins, .t, .plus, .timeBlocSub {
+  display: inline-block;
+  margin-right: 10px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+.tmp input{
+  background-color: #333;
+  color: #EEE;
+  padding: 2px 0 2px 5px;
+  border-radius: 3px;
+}
+.tmpInp{
+  width: 45px;
+  border: 0;
+}
+.tmpInp:focus {
+  background-color: #DDD;
+}
+.tmpInp::-webkit-inner-spin-button,
+.tmpInp::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.btn {
+  background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: bolder;
+  background: #3498db;
+  padding: 1px 5px 1px 5px;
+  text-decoration: none;
+}
+.btn:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+
+
+
+
+/* --------------------------------------
+
+    Responsive :
+
+--------------------------------------- */
+@media screen and (max-width: 950px) {
+  .popupLeft,
+  .popupRight{
+    clear: both;
+    display: inline-block;
+    width: auto;
+  }
+  .popupItem input{
+    max-width: 130px;
+  }
+}
+
+
+
+@media screen and (max-width: 850px) {
+  .menuFull{ display:none; }
+  .menuMobile{ display: block; }
+}
